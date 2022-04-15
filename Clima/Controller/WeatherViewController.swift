@@ -20,18 +20,21 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         
         searchTextField.delegate = self
     }
-
+    
+    //Dismiss the keyboard, print the text when button search is pressed, dismiss the keyboard
     @IBAction func searchPress(_ sender: UIButton) {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
     }
     
+    //What is in the TextField is printed by clicking return on keyboard, dismiss the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         searchTextField.endEditing(true)
         print(searchTextField.text!)
         return true
     }
     
+    //Validation of words in the TextField | user tap else where in the screen
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if textField.text != "" {
             return true
@@ -41,7 +44,9 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //Clear the TextField
     func textFieldDidEndEditing(_ textField: UITextField) {
+        // use searchtextfield value
         searchTextField.text = ""
     }
 }
