@@ -31,6 +31,10 @@ class WeatherViewController: UIViewController {
         
     }
     
+    @IBAction func currentLocationButtonPressed(_ sender: UIButton) {
+        locationManager.requestLocation()
+        
+    }
 }
 
 //MARK: - UITextFieldDelegate
